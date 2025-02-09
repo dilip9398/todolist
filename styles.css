@@ -1,0 +1,181 @@
+ /* General Styles*/
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.roadmap-container {
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    background: #121212; /* Dark gray/black container */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); /* Subtle yellow shadow */
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+}
+.roadmap-container::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.roadmap-container::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+
+.roadmap-container::-webkit-scrollbar-thumb {
+    background: transparent; /* Transparent thumb */
+}
+
+.roadmap-container::-webkit-scrollbar-thumb:hover {
+    background: transparent; /* Transparent thumb on hover */
+}
+
+/* Header */
+.roadmap-header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Yellow header text */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Phase Buttons */
+.phase-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.phase {
+    min-width: 100%; /* Each phase takes up the full width of the container */
+    padding: 20px;
+    box-sizing: border-box;
+}
+.phase-button {
+    padding: 10px 20px;
+    background-color: #ffd700; /* Yellow buttons */
+    color: #000; /* Black text on buttons */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* Yellow shadow */
+}
+
+.phase-button:hover {
+    background-color: #e6b800; /* Slightly darker yellow */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+}
+
+.phase-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Roadmap Animation */
+.roadmap {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    /* overflow: hidden; */
+}
+
+.phase {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.8s forwards;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.phase h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #ffd700; /* Yellow phase title */
+}
+
+/* Task List Styling */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: none; /* Remove height restriction */
+    overflow: visible; /* Ensure no scrolling */
+}
+
+.task-item {
+    margin: 10px 0;
+    padding: 15px;
+    background: #1e1e1e; /* Darker background for tasks */
+    border-left: 5px solid #ffd700; /* Yellow accent for tasks */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.1); /* Subtle yellow shadow */
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2); /* Brighter shadow on hover */
+}
+
+.task-item.completed {
+    background: #1a2a1a; /* Dark green for completed tasks */
+    border-left-color: #32cd32; /* Green accent */
+    color: #32cd32; /* Green text */
+    animation: glowGreen 0.8s ease-in-out; /* Add glowing animation */
+}
+
+.task-item.completed label {
+    text-decoration: none !important; /* Explicitly disable strikethrough */
+}
+
+.task-checkbox {
+    margin-right: 10px;
+    transform: scale(1.2); /* Make the checkbox larger */
+    accent-color: #ffd700; /* Yellow checkbox */
+    transition: all 0.3s ease;
+}
+
+.task-checkbox:checked + label {
+    color: #32cd32; /* Green text when checked */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.list{
+    padding-top: 10%;
+    text-align: left;
+}
