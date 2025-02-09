@@ -179,3 +179,84 @@
     padding-top: 10%;
     text-align: left;
 }
+/* General Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust Roadmap Container */
+    .roadmap-container {
+        width: 95%; /* Increase width for smaller screens */
+        padding: 15px; /* Reduce padding */
+    }
+
+    /* Adjust Header */
+    .roadmap-header h1 {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+    }
+
+    /* Adjust Phase Buttons */
+    .phase-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 5px; /* Reduce gap between buttons */
+    }
+
+    .phase-button {
+        padding: 8px 15px; /* Reduce padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    /* Adjust Task List */
+    .task-list {
+        max-height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .task-item {
+        padding: 10px; /* Reduce padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    /* Adjust Phase Content */
+    .phase {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .phase h2 {
+        font-size: 1.2rem; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further Adjustments for Very Small Screens */
+    .roadmap-container {
+        width: 100%; /* Full width for very small screens */
+        padding: 10px; /* Minimal padding */
+    }
+
+    /* Adjust Header */
+    .roadmap-header h1 {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+
+    /* Adjust Phase Buttons */
+    .phase-button {
+        padding: 6px 12px; /* Even smaller buttons */
+        font-size: 0.8rem; /* Smaller text */
+    }
+
+    /* Adjust Task List */
+    .task-list {
+        max-height: 250px; /* Further reduce height */
+    }
+
+    .task-item {
+        padding: 8px; /* Minimal padding */
+        font-size: 0.8rem; /* Smaller text */
+    }
+
+    /* Adjust Phase Content */
+    .phase {
+        padding: 10px; /* Minimal padding */
+    }
+
+    .phase h2 {
+        font-size: 1rem; /* Smaller heading */
+    }
+}
