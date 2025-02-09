@@ -49,3 +49,34 @@ styleSheet.innerHTML = `
     }
 `;
 document.head.appendChild(styleSheet);
+
+// Load saved checkbox states from Local Storage on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.task-checkbox');
+    checkboxes.forEach(checkbox => {
+        const taskId = checkbox.dataset.taskId;
+        const savedState = localStorage.getItem(taskId);
+        if (savedState === 'true') {
+            checkbox.checked = true;
+            checkbox.closest('.task-item').classList.add('completed');
+        }
+    });
+});
+
+// Save checkbox states to Local Storage when changed
+document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        const taskId = checkbox.dataset.taskId;
+        localStorage.setItem(taskId, checkbox.checked);
+
+        // Add glowing animation and completed class
+        const taskItem = checkbox.closest('.task-item');
+        if (checkbox.checked) {
+            taskItem.classList.add('completed');
+            taskItem.style.animation = 'glowGreen 0.8s ease-in-out';
+        } else {
+            taskItem.classList.remove('completed');
+            taskItem.style.animation = 'none';
+        }
+    });
+});
